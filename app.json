@@ -1,0 +1,53 @@
+{
+  "pages": [
+    "pages/home/home",
+    "pages/classify/classify",
+    "pages/my/my",
+    "pages/mobileInfo/mobileInfo",
+    "pages/search/search",
+    "pages/log/log",
+    "pages/detail/detail",
+    "pages/start/start"
+  ],
+  "tabBar": {
+    "color": "#333333",
+    "selectedColor": "#0081ff",
+    "backgroundColor": "#FFFFFF",
+    "list": [
+      {
+        "text": "首页",
+        "iconPath": "/static/image/tabbarIcon/home.png",
+        "selectedIconPath": "/static/image/tabbarIcon/home@.png",
+        "pagePath": "pages/home/home"
+      },
+      {
+        "text": "分类",
+        "iconPath": "/static/image/tabbarIcon/classify.png",
+        "selectedIconPath": "/static/image/tabbarIcon/classify@.png",
+        "pagePath": "pages/classify/classify"
+      },
+      {
+        "text": "更多",
+        "iconPath": "/static/image/tabbarIcon/my.png",
+        "selectedIconPath": "/static/image/tabbarIcon/my@.png",
+        "pagePath": "pages/my/my"
+      }
+    ]
+  },
+  "usingComponents": {
+    "free-tabs": "/components/free-tabs/free-tabs",
+    "free-tag": "/components/free-tag/free-tag",
+    "free-navBar": "/components/free-navBar/free-navBar",
+    "free-icon": "/components/free-icon/free-icon",
+    "free-title": "/components/free-title/free-title",
+    "free-gap": "/components/free-gap/free-gap",
+    "free-backTop": "/components/free-backTop/free-backTop",
+    "free-image": "/components/free-image/free-image"
+  },
+  "window": {
+    "navigationBarBackgroundColor": "#fff",
+    "navigationBarTitleText": "Free UI",
+    "navigationBarTextStyle": "black"
+  },
+  "sitemapLocation": "sitemap.json"
+}

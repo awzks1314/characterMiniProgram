@@ -1,0 +1,6 @@
+{
+  "usingComponents": {
+    "free-list":"/components/free-list/free-list"
+  },
+  "navigationStyle":"custom"
+}

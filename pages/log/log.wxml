@@ -1,0 +1,21 @@
+<view class=" bg-white padding">
+  <free-timeline-list>
+    <free-timeline-item wx:for="{{logData}}" wx:key="index">
+      <view slot="icon" class="">
+        <free-icon name="calendar"  color="{{index == 0 ?'#0081ef':''}}"></free-icon>
+      </view>
+      <view slot="content" class="bg-gradual-blue  light padding-sm radius-sm  ">
+        <view class="flex ">
+          <view class="flex align-center  radius-sm text-sm title">
+            <text class="padding-xs bg-white " style="">{{item.version}}</text>
+            <text class="padding-xs ">{{item.time}}</text>
+          </view>
+        </view>
+        <view class="padding-top-sm flex flex-direction">
+          <text wx:for="{{item.content}}" wx:key="index" wx:for-item="data">{{data}}</text>
+        </view>
+      </view>
+    </free-timeline-item>
+  </free-timeline-list>
+</view>
+<free-backTop  scrollTop="{{scrollTop}}" ></free-backTop>

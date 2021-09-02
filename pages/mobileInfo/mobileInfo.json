@@ -1,0 +1,6 @@
+{
+  "navigationBarTitleText": "系统信息",
+  "usingComponents": {
+    "free-list":"/components/free-list/free-list"
+  }
+}

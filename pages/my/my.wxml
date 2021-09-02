@@ -1,0 +1,49 @@
+
+<view class="header free-style-list padding solid-bottom flex flex-direction bg-blue">
+  <text class="text-ll ">拾光背景</text>
+  <text class="margin-top-xs">好看的壁纸都在这里~</text>
+</view>
+
+<view class="padding">
+  <view class="flex align-center justify-between">
+    <view class="flex-sub shadow padding flex align-center flex-direction " bindtap="goToUrl" data-url="/pages/home/home" data-type="tab">
+        <view class="dot" style="background:linear-gradient(to right , #fc5e78,#fd919a)">
+          <free-icon name="picfill" color="#fff" size="44"></free-icon>
+        </view>
+        <text class="text-sm text-gray margin-top-xs">精美壁纸</text>
+    </view>
+    <view class="flex-sub shadow margin-lr padding flex align-center flex-direction " bindtap="goToUrl" data-url="/pages/search/search" >
+        <view class="dot" style="background:linear-gradient(to right , #589cfe,#a8defe)">
+          <free-icon name="picfill" color="#fff" size="44"></free-icon>
+        </view>
+        <text class="text-sm text-gray margin-top-xs">搜索壁纸</text>
+    </view>
+    <view class="flex-sub shadow padding flex align-center flex-direction " bindtap="goToUrl" data-url="/pages/more/more">
+        <view class="dot" style="background:linear-gradient(to right , #ffb427,#ffd269)">
+          <free-icon name="rankfill" color="#fff" size="44"></free-icon>
+        </view>
+        <text class="text-sm text-gray margin-top-xs">更多好玩</text>
+    </view>
+  </view>
+</view>
+
+
+<view class="padding-lr">
+  <view class="shadow">
+    <free-list title="制作同款" arrow icon="paintfill" iconColor="#fbbd08">
+      <button open-type="contact" class="free-button  text-gray" style="height:auto;">联系作者</button>
+    </free-list>
+    <free-list title="赞赏支持" arrow icon="likefill" iconColor="#e54d42" bindtap="open"></free-list>
+  </view>
+</view>
+
+<view class="padding">
+  <view class="shadow">
+    <free-list title="本机信息" arrow icon="infofill" iconColor="#f37b1d" bindtap="goToUrl" data-url="/pages/mobileInfo/mobileInfo"></free-list>
+    <free-list title="更新日志" arrow icon="news_hot_fill_light" iconColor="#0081ef" bindtap="goToUrl" data-url="/pages/log/log"></free-list>
+    <free-list title="关注公众号" arrow icon="weixin" iconColor="green">
+      <text class="text-gray">搞文艺的猿</text>
+    </free-list>
+  </view>
+</view>
+<official-account></official-account>

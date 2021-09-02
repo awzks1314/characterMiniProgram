@@ -1,0 +1,24 @@
+<view class="page {{isIPX}} {{Android}}">
+    <view class="top-bar ">
+        <free-input 
+        placeholder='输入关键词搜索壁纸'
+        value="{{searchKeyword}}"
+        extreaWord="搜索"
+        height="100"
+        close
+        bind:confirm = "inConfirm"
+        bind:close = "close" 
+        ></free-input>
+    </view>
+    
+    <view class="content">
+        <view wx:if='{{listData.length == 0}}' class="flex align-center justify-center">
+            <image src="/static/image/no.png" style="width:480rpx;height:480rpx;"> </image>
+        </view>
+    </view>
+    <free-backTop 
+        scrollTop="{{scrollTop}}" 
+        icon="fold"
+        bottom="160"
+        ></free-backTop>
+</view>

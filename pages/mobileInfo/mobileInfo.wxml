@@ -1,0 +1,3 @@
+<free-list wx:for='{{systeminfoArr}}' wx:key='index' title="{{item.name}}" arrow >
+  <text class="text-gray">{{systeminfoObj[item.key]}}</text>
+</free-list>

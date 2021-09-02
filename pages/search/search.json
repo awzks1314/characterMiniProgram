@@ -1,0 +1,6 @@
+{
+  "navigationBarTitleText":"搜索壁纸",
+  "usingComponents": {
+    "free-input": "/components/free-input/free-input"
+  }
+}

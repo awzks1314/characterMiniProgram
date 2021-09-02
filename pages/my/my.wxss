@@ -1,0 +1,30 @@
+
+.header{
+  padding-top:200rpx;
+}
+button {
+  height: 66px;
+  padding-left: 0;
+  padding-right: 0;
+  line-height: 1;
+  margin-left: 0 !important;
+  margin-right: 0 !important;
+  background-color: transparent !important;
+  border: none !important;
+  overflow: visible;
+}
+.dot{
+  width: 88rpx;
+  height: 88rpx;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.free-style-list{
+	background-image: url('https://z3.ax1x.com/2021/05/14/grhfMV.png');
+	background-size: cover;
+	background-position: center;
+	position: relative;
+	z-index: 1;
+}

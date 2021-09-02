@@ -1,0 +1,8 @@
+{
+  "navigationBarTitleText":"测一测性格",
+  "navigationStyle":"custom",
+  "usingComponents": {
+    "free-input":"/components/free-input/free-input",
+    "free-rate":"/components/free-rate/free-rate"
+  }
+}

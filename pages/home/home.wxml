@@ -1,0 +1,58 @@
+<free-navBar title=''   iconTheme="white"  >
+  <view class='padding-left' slot="left">
+      <view class='con'>测一测性格</view>
+  </view>
+  <view class='' slot="center">
+      <free-input inputStyle='0' placeholder='输入您想查询的内容' margin="0" disabled bindtap="goToSearch"></free-input>
+    </view>
+</free-navBar>
+<swiper class="card-swiper {{true?'square-dot':'round-dot'}}" indicator-dots="true" circular="true" autoplay="true" interval="5000" duration="500" bindchange="cardSwiper" indicator-color="white" indicator-active-color="#0081ef">
+  <swiper-item wx:for="{{swiperList}}" wx:key="index" class="{{cardCur==index?'cur':''}}">
+    <view class="swiper-item">
+      <image src="{{item.url}}" mode="aspectFill"></image>
+    </view>
+  </swiper-item>
+</swiper>
+
+<view class="flex align-center justify-between padding-right-sm">
+  <free-title type="2" title="精选内容" sub="choiceness" titlecolor="#0081ef"></free-title>
+  <text class="text-gray">共100个测试</text>
+</view>
+<view class="padding-lr-sm">
+  <view class="home_item flex align-center padding-tb solid-bottom" wx:for="{{20}}" wx:key="index" bindtap="detail">
+    <free-image 
+      src="https://ossweb-img.qq.com/images/lol/web201310/skin/big84003.jpg"
+      width="120rpx"
+      height="120rpx"
+      radius="10rpx"
+    ></free-image>
+    <view class="content_text padding-lr-sm flex-sub flex flex-direction justify-around">
+        <text class="text-black text-cut text-bold text-30">你未来的宝宝性格是什么</text>
+        <view class="flex align-center">
+          <free-rate 
+            current="4"
+            disabled="true"
+            class="padding-tb-xss"
+          ></free-rate>
+          <text class="text-sm text-gray padding-left-sm">6.6w人测过</text>
+        </view>
+        <text class="text-cut-2 text-gray text-sm">通过10道题，测试你天津话的等级！快来测试一下吧！通过10道题，测试你天津话的等级！快来测试一下吧！</text>
+    </view>
+    <view class="go flex flex-direction align-center justify-center">
+      <view class="goBtn">GO</view>
+    </view>
+  </view>
+</view>
+<!-- <free-guidance
+  tip="点击「添加小程序」，下次访问更便捷"
+  time="4"
+  bgColor="#0081ef"
+  color="#fff"
+  custom
+></free-guidance> -->
+<free-backTop 
+  scrollTop="{{scrollTop}}" 
+  icon="fold"
+  
+  ></free-backTop>
+
