@@ -1,2 +1,50 @@
-<!--pages/classify/classify.wxml-->
-<text>pages/classify/classify.wxml</text>
+<view class="pageBox flex flex-direction" style="height:100vh;">
+    
+    <view class="main " >
+      <free-input 
+      id="input"
+      placeholder='输入您要查找的分类'
+      height="100"
+      extreaWord="搜索"
+      disabled
+    ></free-input>
+    <!-- 内容 -->
+    <view class="menu-wrap ">
+      <!-- 左侧 -->
+      <scroll-view scroll-with-animation scroll-y class="menus" scroll-top="{{scrollTop}}" scroll-into-view="{{itemId}}">
+        <view class="wrapper">
+          <view wx:for="{{menuList}}" wx:key="index" id="item-{{index}}" class="menu  {{currentTab==index ? 'active' : ''}}" data-current="{{index}}" bindtap="swichNav">
+            <text >{{item}}</text>
+          </view>
+        </view>
+      </scroll-view>
+  
+      
+      <block wx:for="{{menuList}}" wx:key="index">
+        <scroll-view scroll-with-animation scroll-y class="goods " wx:if="{{currentTab==index}}">
+          <view class="wrapper padding-sm">
+            <!-- goods -->
+            <view class="list padding-bottom">
+              <view  class="category" id="cate-{{index}}">
+                <view class="items flex flex-direction">
+                  <view class="good flex align-center padding-tb solid-bottom" wx:for="{{10}}" wx:for-item="good" wx:key="index">
+                    <free-image 
+                        src="https://ossweb-img.qq.com/images/lol/web201310/skin/big84003.jpg"
+                        width="120rpx"
+                        height="120rpx"
+                        radius="10rpx"
+                      ></free-image>
+                      <view class="content_text padding-left-sm flex-sub flex flex-direction justify-around">
+                          <text class="text-black text-cut text-bold text-30">你未来的宝宝性格是什么</text>
+                          <text class="text-cut-2 text-gray text-sm margin-top-xs">通过10道题，测试你天津话的等级！快来测试一下吧！通过10道题，测试你天津话的等级！快来测试一下吧！</text>
+                      </view>
+                  </view>
+                </view>
+              </view>
+            </view>
+          </view>
+        </scroll-view>
+      </block>
+    </view>
+  </view>
+  </view>

@@ -1,3 +1,8 @@
 {
-  "usingComponents": {}
-}
+  "navigationBarTitleText":"左右联动",
+  "usingComponents": {
+    "free-input":"/components/free-input/free-input",
+    "free-rate":"/components/free-rate/free-rate",
+    "free-list-grid":"/components/free-list-grid/free-list-grid"
+  }
+} 

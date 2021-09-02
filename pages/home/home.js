@@ -1,18 +1,12 @@
-// pages/home/home.js
+const fun = require('../../utils/share')
+const app = getApp()
 Page({
 
   /**
    * 页面的初始数据
    */
   data: {
-    swiperList:[
-      {id:0,type:'image',url:'https://ossweb-img.qq.com/images/lol/web201310/skin/big84003.jpg'},
-      {id:1,type:'image',url:'https://ossweb-img.qq.com/images/lol/web201310/skin/big84004.jpg'},
-      {id:2,type:'image',url:'https://ossweb-img.qq.com/images/lol/web201310/skin/big84005.jpg'},
-      {id:3,type:'image',url:'https://ossweb-img.qq.com/images/lol/web201310/skin/big84006.jpg'},
-      {id:4,type:'image',url:'https://ossweb-img.qq.com/images/lol/web201310/skin/big84007.jpg'},
-      {id:5,type:'image',url:'https://ossweb-img.qq.com/images/lol/web201310/skin/big84008.jpg'}
-    ],
+    bnrUrl:[],
     cardCur:0,
     scrollTop:0
   },
@@ -21,6 +15,37 @@ Page({
     this.setData({
       scrollTop: e.scrollTop
     })
+  },
+  onLoad() {
+    // this.getBanner()
+  },
+  // 查询信息
+  getList() {
+
+  },
+  getBanner() {
+    var that = this
+    wx.request({
+      url: app.globalData.url + "ndzscs/request1/zst.php",
+      method: "GET",
+      header: {
+          "content-type": "application/json"
+      },
+      success: function (e) {
+        console.log(e)
+        that.setData({
+            bnrUrl: [{
+              "url": e.data.tp1
+          }, {
+              "url": e.data.tp2
+          }, {
+              "url": e.data.tp3
+          }, {
+              "url": e.data.tp4
+          }]
+        })
+      },
+  });
   },
   cardSwiper(e) {
     this.setData({
@@ -42,6 +67,6 @@ Page({
    * 用户点击右上角分享
    */
   onShareAppMessage: function () {
-
+    return fun.shareConfig();
   }
 })
