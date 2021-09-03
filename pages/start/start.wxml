@@ -2,17 +2,17 @@
   <view class="question_top flex  align-center" >
       <image src="/static/image/author.jpg" class="logoImg"></image>
       <view class="top_content ">
-        如果说话撒和第三代撒打算大如果说话撒和第三代撒打算大如果说话撒和第三代撒打算大如果说话撒和第三代撒打算大
+        {{topicInfo.desc}}
         <view class="triangleLeft"></view>
         <view class="triangleLeft1"></view>
       </view>
   </view>
-  <view class="flex align-center justify-center margin-top">
-    <view class="start_btn bg-blue">开始测试</view>
+  <view class="flex align-center justify-center margin-top" >
+    <view class="start_btn bg-blue" bindtap="isStart">开始测试</view>
   </view>
 
   <!-- 开始 -->
-  <view class="answer_box flex margin-top justify-end align-center">
+  <view class="answer_box flex margin-top justify-end align-center" wx:if="{{isStart}}">
       <view class="answer_content">
         <view class="answer_desc">开始</view>
         <view class="triangleRight"></view>
@@ -21,35 +21,30 @@
   </view>
 
   <!-- 内容 -->
-  <view wx:for="{{4}}">
+  <view wx:for="{{questionList}}" wx:key="index">
     <view class="flex align-center justify-center margin-top">
       <view class="title_num">
-          第1题/共6题
+          第{{item.question[0] + 1}}题/共{{listData.length}}题
       </view>
     </view>
 
     <view class="question_top flex margin-top align-center" >
         <image src="/static/image/author.jpg" class="logoImg"></image>
         <view class="top_content ">
-          如果说话撒和第三代撒打算大如果说话撒和第三代撒打算大如果说话撒和第三代撒打算大如果说话撒和第三代撒打算大
+          {{item.question[1]}}
           <view class="triangleLeft"></view>
           <view class="triangleLeft1"></view>
         </view>
     </view>
     <view class="select_box bg-gray margin-top">
-        <view class="bg-white padding-xs flex align-center margin-bottom-xs">
-          <free-icon name="round" size="36"></free-icon>
-          <text class="flex-sub padding-left-sm">主动介绍。硬件他们认识主动介绍。硬件他们认识</text>
-        </view>
-        <view class="bg-white padding-xs flex align-center">
-          <free-icon name="roundcheckfill"  size="36" color="#0081ef"></free-icon>
-          <text class="flex-sub padding-left-sm">主动介绍。硬件他们认识主动介绍。硬件他们认识</text>
+        <view class="select_item bg-white padding-xs flex align-center margin-bottom-xs" wx:for="{{item.len}}" wx:for-item="items" >
+          <free-icon name="{{item.selectIndex == items?'roundcheckfill':'round'}}" size="36"></free-icon>
+          <text class="flex-sub padding-left-sm">{{item.question[items + 2]}}</text>
         </view>
     </view>
+    <view class="backView text-gray" wx:if="{{index > 0}}">重选上一题</view>
 
-    <view class="backView text-gray">重选上一题</view>
-
-    <view class="answer_box flex margin-top justify-end align-center">
+    <view class="answer_box flex margin-top justify-end align-center" wx:if="{{item.answer}}">
         <view class="answer_content">
           <view class="answer_desc">主动介绍。硬件他们认识主动介绍。硬件他们认识</view>
           <view class="triangleRight"></view>

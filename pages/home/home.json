@@ -1,5 +1,6 @@
 {
   "navigationBarTitleText":"测一测性格",
+  "enablePullDownRefresh": true,
   "navigationStyle":"custom",
   "usingComponents": {
     "free-input":"/components/free-input/free-input",

@@ -46,7 +46,7 @@
   },
   "window": {
     "navigationBarBackgroundColor": "#fff",
-    "navigationBarTitleText": "Free UI",
+    "navigationBarTitleText": "",
     "navigationBarTextStyle": "black"
   },
   "sitemapLocation": "sitemap.json"

@@ -1,9 +1,9 @@
 <view class="detail_box">
   <image src="/static/image/bg/bg_1.jpg" class="detail_img"></image>
   <view class="detail_content">
-    <view class="detail_title text-bold margin-bottom text-lg text-center text-cut">测试你是哪一种XXXXX</view>
+    <view class="detail_title text-bold margin-bottom text-lg text-center text-cut">{{topicInfo.title}}</view>
     <view class="detail_desc padding">
-      cccc
+      {{topicInfo.desc}}
     </view>
     <view class="text-center margin-top-lg">
       <view class="free-button bg-blue radius" bindtap="start">开始测试</view>

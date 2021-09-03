@@ -6,14 +6,14 @@
 }
 .detail_content{
   position: fixed;
-  top: 50%;
+  top: 40%;
   left: 50%;
   transform: translate(-50%,-50%);
   width: 600rpx;
   
 }
 .detail_desc{
-  height: 400rpx;
+  min-height: 100rpx;
   background-color: #f2f2f2;
   border-radius: 20rpx;
   

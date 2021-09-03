@@ -86,3 +86,6 @@ page {
   text-align: right;
   margin-top: 10rpx;
 }
+.select_item:nth-last-child(1) {
+  margin-bottom: 0;
+}

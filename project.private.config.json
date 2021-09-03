@@ -47,6 +47,12 @@
           "pathName": "pages/classify/classify",
           "query": "",
           "scene": null
+        },
+        {
+          "name": "pages/start/start",
+          "pathName": "pages/start/start",
+          "query": "id=71&title=%E4%BB%8E%E6%A2%A6%E5%A2%83%E7%9C%8B%E8%A7%81%E7%9C%9F%E5%AE%9E%E7%9A%84%E8%87%AA%E5%B7%B1",
+          "scene": null
         }
       ]
     }
