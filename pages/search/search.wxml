@@ -1,7 +1,7 @@
 <view class="page {{isIPX}} {{Android}}">
     <view class="top-bar ">
         <free-input 
-        placeholder='输入关键词搜索壁纸'
+        placeholder='输入关键词搜索'
         value="{{searchKeyword}}"
         extreaWord="搜索"
         height="100"
@@ -10,7 +10,31 @@
         bind:close = "close" 
         ></free-input>
     </view>
-    
+    <view class="padding-sm bg-white" wx:if="{{listData.length>0}}">
+        <view class="home_item flex align-center padding-tb solid-bottom" wx:for="{{listData}}" wx:key="index" bindtap="detail" data-index="{{index}}">
+            <free-image 
+            src="{{item[4]}}"
+            width="120rpx"
+            height="120rpx"
+            radius="10rpx"
+            ></free-image>
+            <view class="content_text padding-lr-sm flex-sub flex flex-direction justify-around">
+                <text class="text-black text-cut text-bold text-30">{{item[1]}}</text>
+                <view class="flex align-center">
+                <free-rate 
+                    current="4"
+                    disabled="true"
+                    class="padding-tb-xss"
+                ></free-rate>
+                <text class="text-sm text-gray padding-left-sm">{{item[6]}}w人测过</text>
+                </view>
+                <text class="text-cut-2 text-gray text-sm">{{item[2]}}</text>
+            </view>
+            <view class="go flex flex-direction align-center justify-center">
+            <view class="goBtn">GO</view>
+            </view>
+        </view>
+        </view>
     <view class="content">
         <view wx:if='{{listData.length == 0}}' class="flex align-center justify-center">
             <image src="/static/image/no.png" style="width:480rpx;height:480rpx;"> </image>

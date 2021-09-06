@@ -1,42 +1,42 @@
 function shareConfig(){
   var messages = [
-    {   "title": "美团饿了么大额红包，每日可领！",
-      "path": "/pages/coupon/coupon",
-      "imageUrl" : "https://6e65-newpicture-9gfdwu1vedeced36-1304925472.tcb.qcloud.la/7ea058d0-4d8c-11eb-a16f-5b3e54966275.png?sign=7f52e702e19ec05633587b6a467d14b5&t=1627009933",
+    {   "title": "想要知道你的渣男/渣女属性吗？",
+      "path": "/pages/home/home",
+      "imageUrl" : "http://www.creater.ltd:8888/down/0LddMk46XM9Q",
     }
     ,{
-      "title": "吃了这么多年外卖，你知道这个秘密吗？",
-      "path": "/pages/coupon/coupon",
-      "imageUrl" : "https://6e65-newpicture-9gfdwu1vedeced36-1304925472.tcb.qcloud.la/7ea058d0-4d8c-11eb-a16f-5b3e54966275.png?sign=7f52e702e19ec05633587b6a467d14b5&t=1627009933"
+      "title": "你理想中的另一半是什么样？",
+      "path": "/pages/home/home",
+      "imageUrl" : "http://www.creater.ltd:8888/down/0LddMk46XM9Q"
     },{
-      "title": "这样点外卖，一年省下一个亿",
-      "path": "/pages/coupon/coupon",
-      "imageUrl" : "https://6e65-newpicture-9gfdwu1vedeced36-1304925472.tcb.qcloud.la/7ea058d0-4d8c-11eb-a16f-5b3e54966275.png?sign=7f52e702e19ec05633587b6a467d14b5&t=1627009933"
+      "title": "测试适合你的职业",
+      "path": "/pages/home/home",
+      "imageUrl" : "http://www.creater.ltd:8888/down/0LddMk46XM9Q"
     },{
-      "title": "点外卖前先领券，吃霸王餐",
-      "path": "/pages/coupon/coupon",
-      "imageUrl" : "https://6e65-newpicture-9gfdwu1vedeced36-1304925472.tcb.qcloud.la/7ea058d0-4d8c-11eb-a16f-5b3e54966275.png?sign=7f52e702e19ec05633587b6a467d14b5&t=1627009933"
+      "title": "标准智商测试表(IQ)",
+      "path": "/pages/home/home",
+      "imageUrl" : "http://www.creater.ltd:8888/down/0LddMk46XM9Q"
     },{
-      "title": "美团饿了么内部优惠券，手慢无",
-      "path": "/pages/coupon/coupon",
-      "imageUrl" : "https://6e65-newpicture-9gfdwu1vedeced36-1304925472.tcb.qcloud.la/7ea058d0-4d8c-11eb-a16f-5b3e54966275.png?sign=7f52e702e19ec05633587b6a467d14b5&t=1627009933"
+      "title": "测试他/她在你心目中的地位",
+      "path": "/pages/home/home",
+      "imageUrl" : "http://www.creater.ltd:8888/down/0LddMk46XM9Q"
     },{
-      "title": "点外卖不用优惠券，你就out了",
-      "path": "/pages/coupon/coupon",
-      "imageUrl" : "https://6e65-newpicture-9gfdwu1vedeced36-1304925472.tcb.qcloud.la/7ea058d0-4d8c-11eb-a16f-5b3e54966275.png?sign=7f52e702e19ec05633587b6a467d14b5&t=1627009933"
+      "title": "今年你会脱单吗？",
+      "path": "/pages/home/home",
+      "imageUrl" : "http://www.creater.ltd:8888/down/0LddMk46XM9Q"
     },{
-      "title": "外卖不为人知的秘密，点这解密",
-      "path": "/pages/coupon/coupon",
-      "imageUrl" : "https://6e65-newpicture-9gfdwu1vedeced36-1304925472.tcb.qcloud.la/7ea058d0-4d8c-11eb-a16f-5b3e54966275.png?sign=7f52e702e19ec05633587b6a467d14b5&t=1627009933"
+      "title": "心理健康状况测试",
+      "path": "/pages/home/home",
+      "imageUrl" : "http://www.creater.ltd:8888/down/0LddMk46XM9Q"
     },{
-      "title": "震惊！小伙点外卖竟然花了1分钱",
-      "path": "/pages/coupon/coupon",
-      "imageUrl" : "https://6e65-newpicture-9gfdwu1vedeced36-1304925472.tcb.qcloud.la/7ea058d0-4d8c-11eb-a16f-5b3e54966275.png?sign=7f52e702e19ec05633587b6a467d14b5&t=1627009933"
+      "title": "测试你的细心程度",
+      "path": "/pages/home/home",
+      "imageUrl" : "http://www.creater.ltd:8888/down/0LddMk46XM9Q"
     },
     {
-      "title": "从这点外卖，你也可以吃霸王餐",
-      "path": "/pages/coupon/coupon",
-      "imageUrl" : "https://6e65-newpicture-9gfdwu1vedeced36-1304925472.tcb.qcloud.la/7ea058d0-4d8c-11eb-a16f-5b3e54966275.png?sign=7f52e702e19ec05633587b6a467d14b5&t=1627009933"
+      "title": "为什么你的压力这么大？",
+      "path": "/pages/home/home",
+      "imageUrl" : "http://www.creater.ltd:8888/down/0LddMk46XM9Q"
     }
   ];
   return messages[Math.floor(Math.random()*messages.length)];

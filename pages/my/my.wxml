@@ -6,23 +6,23 @@
 
 <view class="padding">
   <view class="flex align-center justify-between">
-    <view class="flex-sub shadow padding flex align-center flex-direction " bindtap="goToUrl" data-url="/pages/home/home" data-type="tab">
+    <view class="flex-sub shadow padding flex align-center flex-direction " bindtap="goToMini" data-appid="wxc081a514564300dd" data-path="pages/index/index">
         <view class="dot" style="background:linear-gradient(to right , #fc5e78,#fd919a)">
           <free-icon name="picfill" color="#fff" size="44"></free-icon>
         </view>
-        <text class="text-sm text-gray margin-top-xs">精美壁纸</text>
+        <text class="text-sm text-gray margin-top-xs">拾光背景</text>
     </view>
-    <view class="flex-sub shadow margin-lr padding flex align-center flex-direction " bindtap="goToUrl" data-url="/pages/search/search" >
+    <view class="flex-sub shadow margin-lr padding flex align-center flex-direction " bindtap="goToMini" data-appid="wx2981dfab57441e61" data-path="pages/tool/tool">
         <view class="dot" style="background:linear-gradient(to right , #589cfe,#a8defe)">
           <free-icon name="picfill" color="#fff" size="44"></free-icon>
         </view>
-        <text class="text-sm text-gray margin-top-xs">搜索壁纸</text>
+        <text class="text-sm text-gray margin-top-xs">拾光助手</text>
     </view>
-    <view class="flex-sub shadow padding flex align-center flex-direction " bindtap="goToUrl" data-url="/pages/more/more">
+    <view class="flex-sub shadow padding flex align-center flex-direction " bindtap="goToMini" data-appid="wxdff7ff3637a35c37" data-path="pages/basic/index/index">
         <view class="dot" style="background:linear-gradient(to right , #ffb427,#ffd269)">
           <free-icon name="rankfill" color="#fff" size="44"></free-icon>
         </view>
-        <text class="text-sm text-gray margin-top-xs">更多好玩</text>
+        <text class="text-sm text-gray margin-top-xs">FreeUI组件库</text>
     </view>
   </view>
 </view>

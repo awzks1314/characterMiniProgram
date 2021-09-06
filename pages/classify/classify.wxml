@@ -7,6 +7,7 @@
       height="100"
       extreaWord="搜索"
       disabled
+      bindtap="goToSearch"
     ></free-input>
     <!-- 内容 -->
     <view class="menu-wrap ">
@@ -27,16 +28,16 @@
             <view class="list padding-bottom">
               <view  class="category" id="cate-{{index}}">
                 <view class="items flex flex-direction">
-                  <view class="good flex align-center padding-tb solid-bottom" wx:for="{{10}}" wx:for-item="good" wx:key="index">
+                  <view class="good flex align-center padding-tb solid-bottom" wx:for="{{listData[currentTab].list}}" wx:for-item="good" wx:for-index="goodIndex" wx:key="goodIndex" bindtap="detail" data-index="{{goodIndex}}">
                     <free-image 
-                        src="https://ossweb-img.qq.com/images/lol/web201310/skin/big84003.jpg"
+                        src="{{good[4]}}"
                         width="120rpx"
                         height="120rpx"
                         radius="10rpx"
                       ></free-image>
                       <view class="content_text padding-left-sm flex-sub flex flex-direction justify-around">
-                          <text class="text-black text-cut text-bold text-30">你未来的宝宝性格是什么</text>
-                          <text class="text-cut-2 text-gray text-sm margin-top-xs">通过10道题，测试你天津话的等级！快来测试一下吧！通过10道题，测试你天津话的等级！快来测试一下吧！</text>
+                          <text class="text-black text-cut text-bold text-30">{{good[1]}}</text>
+                          <text class="text-cut-2 text-gray text-sm margin-top-xs">{{good[2]}}</text>
                       </view>
                   </view>
                 </view>

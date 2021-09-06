@@ -7,7 +7,10 @@
     "pages/search/search",
     "pages/log/log",
     "pages/detail/detail",
-    "pages/start/start"
+    "pages/start/start",
+    "pages/otherResult/otherResult",
+    "pages/fwbjx/fwbjx",
+    "pages/ldt/ldt"
   ],
   "tabBar": {
     "color": "#333333",

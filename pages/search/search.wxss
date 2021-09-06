@@ -2,3 +2,23 @@ page {
   background-color: #f3f4f8;
   
 }
+.home_item:nth-child(1) {
+  padding-top:0;
+}
+.home_item:nth-last-child(1){
+  padding-bottom: 0;
+}
+.home_item:nth-last-child(1)::after{
+  border-width:0;
+}
+.goBtn{
+  width:80rpx;
+  height: 80rpx;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: #0081ef;
+  color: #Fff;
+  margin-bottom:10rpx;
+}

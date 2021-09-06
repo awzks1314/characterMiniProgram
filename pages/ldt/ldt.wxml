@@ -1,0 +1,33 @@
+<!--index.wxml-->
+<view class="container">
+  <ec-canvas id="mychart-dom-graph" canvas-id="mychart-graph" ec="{{ec}}"></ec-canvas>
+</view>
+
+<free-title type="2" title="评分表" sub="score" titlecolor="#0081ef"></free-title>
+<view class="padding-lr">
+  <view class=" flex  item">
+      <view wx:for="{{indicator}}" wx:key="index" class="flex-sub flex flex-direction align-center ">
+        <view class="title w100  padding-tb-xs bg-blue text-center">{{item.name}}</view>
+        <view class="score w100  padding-tb-xs text-center item_score">{{indicatorValue[index]}}</view>
+      </view>
+  </view>
+</view>
+<free-title type="2" title="测试评价" sub="evaluate" titlecolor="#0081ef"></free-title>
+
+<view class="padding-lr">
+  <view class="">{{ztpj}}</view>
+</view>
+
+<free-gap height="150"></free-gap>
+<view class="padding-lr bottom_box ">
+  <view class="padding-top solid-top flex">
+    <button class="free-button bg-blue flex-sub margin-right flex align-center" bindtap="backHome">
+      <free-icon name="home" size="32" color="#fff"></free-icon>
+      <text class="padding-left-xs">返回主页</text>
+    </button>
+    <button class="free-button bg-gray flex-sub" open-type="share">
+      <free-icon name="share" size="32" color="#0081ef"></free-icon>
+      <text class="padding-left-xs text-blue">分享好友</text>
+    </button>
+  </view>
+</view>

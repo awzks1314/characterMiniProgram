@@ -1,0 +1,6 @@
+{
+  "navigationBarTitleText": "测试结果",
+  "usingComponents": {
+    "free-progress":"/components/free-progress/free-progress"
+  }
+}
