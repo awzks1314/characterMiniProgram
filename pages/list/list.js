@@ -12,9 +12,12 @@ Page({
     otherList:null
   },
   onShow() {
-    this.getTitle()
+    
     this.getData()
   }, 
+  onLoad() {
+    this.getTitle()
+  },
   getTitle() {
     var that = this
     wx.request({
@@ -92,7 +95,8 @@ Page({
    */
   onShareAppMessage: function () {
     return {
-      "title": "邀请您来挑战我,你也来评测一下吧！",
+      // "title": "邀请您来挑战我,你也来评测一下吧！",
+      "title": '我完成了“'+this.data.tabList[this.data.currentTab][2] +"打榜挑战”你也来挑战一下吧！",
       "path": "/pages/list/list",
       "imageUrl" : "http://www.creater.ltd:8888/down/0LddMk46XM9Q",
     }

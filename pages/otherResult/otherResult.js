@@ -17,7 +17,7 @@ Page({
     })
   },
   backHome() {
-    if (wx.getStorageSync('origin')) {
+    if (wx.getStorageSync('origin')!== null) {
       wx.setStorageSync('origin', null)
       wx.switchTab({
         url: '/pages/list/list',

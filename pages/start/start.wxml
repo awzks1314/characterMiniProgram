@@ -39,7 +39,7 @@
     <view class="select_box bg-gray margin-top">
       <block wx:for="{{item.len}}" wx:key="items" wx:for-item="items" wx:for-index="indexs" >
           
-          <view class="select_item bg-white padding-lr-xs padding-tb-sm radius-xs flex align-center margin-bottom-xs" bindtap="selectAnswer" data-index="{{index}}" data-items="{{items + 2}}" wx:if="{{item.question[items + 2].length > 0 && item.question[14] != 1 && items <= 11}}">
+          <view class="select_item bg-white padding-lr-xs padding-tb-sm radius-xs flex align-center margin-bottom-xs" bindtap="selectAnswer" data-index="{{index}}" data-items="{{items + 2}}" wx:if="{{item.question[items + 2] !=0 && item.question[items + 2].length > 0 && item.question[14] != 1 && items <= 11}}">
             <free-icon name="{{item.selectIndex == items?'roundcheckfill':'round'}}" size="36" color="{{item.selectIndex == items?'#0081ef':''}}"></free-icon>
             <text class="flex-sub padding-left-sm">{{item.question[items + 2]}}</text>
           </view>
@@ -58,7 +58,9 @@
 
     <view class="answer_box flex margin-top justify-end align-center" wx:if="{{item.answer}}">
         <view class="answer_content">
-          <view class="answer_desc" >{{item.answer}}</view>
+          <view class="answer_desc" wx:if="{{item.type != 'img'}}">{{item.answer}}</view>
+          
+          <view class="answer_desc" wx:else ><image src="{{item.answer}}"  class="imgs"></image></view>
           <view class="triangleRight"></view>
         </view>
         <image src="{{userInfo.avatarUrl}}" class="logoImg"></image>
@@ -67,6 +69,6 @@
   <free-gap height="120"></free-gap>
 </scroll-view>
 
-<view wx:if="{{nowIndx == (listData.length - 1)}}" class="bottom bg-blue shadow flex align-center justify-center" bindtap="getResultData">
+<view wx:if="{{nowIndx == (listData.length - 1) && isStart}}" class="bottom bg-blue shadow flex align-center justify-center" bindtap="getResultData">
   查看结果
 </view>

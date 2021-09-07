@@ -3,11 +3,12 @@
   <view wx:for="{{testData}}" wx:key="index" class="margin-bottom">
     <view wx:if="{{item[2]}}" class="">
       <view class="text-blue text-lg" >{{item[1].text}}</view>
-      <text class=" margin-tb">{{item[2].text}}</text>
+      <view class=" margin-top-sm" wx:if="{{item[2].type =='text'}}">{{item[2].text}}</view>
+      <image src="{{item[2].src}}" wx:if="{{item[2].type =='img'}}" class="imgs"></image>
     </view>
 
     <free-progress 
-    wx:else
+    wx:if="{{item[1][1].type == 'text'}}"
     width="{{item[1][1].text}}"
     radius="20rpx"
     

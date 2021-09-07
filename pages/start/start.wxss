@@ -101,3 +101,8 @@
   border-radius: 60rpx;
   /* padding: 0 20rpx; */
 }
+
+.imgs{
+  width: 80rpx;
+  height: 80rpx;
+}

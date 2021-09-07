@@ -12,7 +12,7 @@ Page({
     listData:[],//题目列表
     isStart:false,
     scrollTop:0,
-    nowIndx:0,//当前选中
+    nowIndx:-1,//当前选中
     userInfo:{},
     id:''
   },
@@ -110,6 +110,7 @@ Page({
       return
     }
     this.data.questionList[dat.index].selectIndex = e.detail.value
+    
     this.data.questionList[dat.index].answer = e.detail.value
     this.setData({
       questionList:this.data.questionList,
@@ -127,7 +128,13 @@ Page({
       return
     }
     this.data.questionList[dat.index].selectIndex = (dat.items - 2)
-    this.data.questionList[dat.index].answer = this.data.questionList[dat.index].question[dat.items]
+    // console.log(e.detail.value)
+    // console.log(e.detail.value.indexOf('http'))
+    let str = this.data.questionList[dat.index].question[dat.items]
+    if (str.indexOf('http') == 0) {
+      this.data.questionList[dat.index].type = 'img'
+    }
+    this.data.questionList[dat.index].answer = str
     this.setData({
       questionList:this.data.questionList,
       nowIndx:dat.index

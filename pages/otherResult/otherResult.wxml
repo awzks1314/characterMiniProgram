@@ -1,5 +1,11 @@
 
-<free-title type="2" title="测试结果" sub="result" titlecolor="#0081ef"></free-title>
+<view wx:if="{{testData.df}}">
+  <free-title type="2" title="测试结果" sub="result" titlecolor="#0081ef"></free-title>
+  <view class="padding-lr">
+    <text class="">{{testData.df}}</text>
+  </view>
+</view>
+<free-title type="2" title="评价分析" sub="analyse" titlecolor="#0081ef"></free-title>
 <view class="padding-lr">
   <text class="">{{testData.ztpj}}</text>
 </view>
