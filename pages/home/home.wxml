@@ -6,10 +6,10 @@
       <free-input inputStyle='0' placeholder='输入您想查询的内容' margin="0" disabled bindtap="goToSearch"></free-input>
     </view>
 </free-navBar>
-<swiper class="card-swiper {{true?'square-dot':'round-dot'}}" indicator-dots="true" circular="true" autoplay="true" interval="5000" duration="500" bindchange="cardSwiper" indicator-color="white" indicator-active-color="#0081ef">
-  <swiper-item wx:for="{{bnrUrl}}" wx:key="index" class="{{cardCur==index?'cur':''}}">
+<swiper class="card-swiper {{true?'square-dot':'round-dot'}}" indicator-dots="true" circular="true" autoplay="true" interval="5000" duration="500" current="1" bindchange="cardSwiper" indicator-color="white" indicator-active-color="#0081ef">
+  <swiper-item wx:for="{{bnrUrl}}" wx:key="index" class="{{cardCur==index?'cur':''}}" catchtap="bannerDetail" data-index="{{index}}">
     <view class="swiper-item">
-      <image src="{{item.url}}" mode="aspectFill"></image>
+      <image src="{{item[5]}}" mode="aspectFill" ></image>
     </view>
   </swiper-item>
 </swiper>
@@ -34,7 +34,7 @@
             disabled="true"
             class="padding-tb-xss"
           ></free-rate>
-          <text class="text-sm text-gray padding-left-sm">{{item[6]}}w人测过</text>
+          <text class="text-sm text-gray padding-left-sm">{{item[6]}}人测过</text>
         </view>
         <text class="text-cut-2 text-gray text-sm">{{item[2]}}</text>
     </view>

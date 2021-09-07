@@ -1,7 +1,7 @@
 
 .allBox{
   height:100vh;
-  padding: 20rpx 20rpx 200rpx;
+  padding: 20rpx 20rpx 160rpx;
 }
 ::-webkit-scrollbar {
   width: 0;

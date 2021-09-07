@@ -1,9 +1,9 @@
 <view class="free-tabs-view {{isFixed?'free-tabs-fixed':'free-tabs-relative'}} {{unlined?'free-unlined':''}}" style="height:{{height+'rpx'}};background:{{backgroundColor}};top:{{isFixed?top+'px':'auto'}};">
-  <scroll-view  scroll-x class="free-tabs-item" style="width:{{tabWidth}}" scroll-left="{{scrollLeft}}" scroll-with-animation>
+  <scroll-view  scroll-x class="free-tabs-item"  scroll-left="{{scrollLeft}}" scroll-with-animation>
     <view class="free-tabs-title {{!isScroll?'free-tabs-title-flex':''}}" >
       <view class="free-flex  {{item.disabled?'free-tabs-disabled':''}} {{isScroll?'free-flex-flex':''}}" wx:for="{{tabs}}" wx:key="index"
       id="free-tab-item-{{index}}"
-      style="color:{{currentTab==index?selectedColor:color}};font-size:{{size+'rpx'}};height:{{height}}rpx;font-weight:{{bold && currentTab==index?'bold':'normal'}};flex:{{!isScroll?'1':'auto'}};padding:0 {{padding}}rpx;" 
+      style="color:{{currentTab==index?selectedColor:color}};font-size:{{size+'rpx'}};height:{{height}}rpx;font-weight:{{bold && currentTab==index?'bold':'normal'}};flex:{{!isScroll?'1':'auto'}};padding:0 {{padding}}rpx;width:{{tabWidth?tabWidth + 'rpx':'auto'}}" 
       catchtap="swichTabs" data-index="{{index}}"
       > 
         <free-icon name="{{item.icon}}"  color="{{currentTab==index?selectedColor:color}}" wx:if="{{item.icon}}" ></free-icon>

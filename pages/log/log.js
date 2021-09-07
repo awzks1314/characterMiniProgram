@@ -7,10 +7,10 @@ Page({
   data: {
     logData:[
       {
-        time:'Sep 1 2021',
-        version:'v1.0.8',
+        time:'Sep 6 2021',
+        version:'v1.0.1',
         content:[
-          '1.free-input新增height字段',
+          '1.发布第一版本'
         ]
       }
     ],

@@ -65,6 +65,12 @@
           "pathName": "pages/fwbjx/fwbjx",
           "query": "",
           "scene": null
+        },
+        {
+          "name": "pages/list/list",
+          "pathName": "pages/list/list",
+          "query": "",
+          "scene": null
         }
       ]
     }

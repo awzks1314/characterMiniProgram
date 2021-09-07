@@ -5,7 +5,7 @@ Page({
    * 页面的初始数据
    */
   data: {
-    topicInfo:{},
+    topicInfo:[],
     questionList:[],//问题列表
     currentTab:0,
     answerList:[],
@@ -13,7 +13,8 @@ Page({
     isStart:false,
     scrollTop:0,
     nowIndx:0,//当前选中
-    userInfo:{}
+    userInfo:{},
+    id:''
   },
   onLoad(options) {
     this.setData({
@@ -21,17 +22,49 @@ Page({
       topicInfo:wx.getStorageSync('topicInfo')
     },() => {
       wx.setNavigationBarTitle({
-        title: this.data.topicInfo.title
+        title: this.data.topicInfo[1]
       })
       this.getList()
     })
+  },
+  onReady() {
+    var o = this
+    console.log(app.globalData.appid)
+    if (app.globalData.appid == null) {
+      wx.login({
+        success: function (n) {
+          var code1 = n.code;
+          wx.request({
+            url: app.globalData.url +"ndzscs/phb/hqopenid.php",
+            method: "GET",
+            header: {
+              "content-type": "application/json"
+            },
+            data: {
+              code: code1
+            },
+            success: function (s) {
+              app.globalData.appid = s.data;
+              o.setData({
+                id: s.data
+              })
+            },
+          }) //获取openid
+        }
+      })
+    }//appid为空重新加载
+    else {      
+      o.setData({
+        id: app.globalData.appid
+      })
+    }
   },
   getList() {
     var that = this
     wx.request({
       url: app.globalData.url + "ndzscs/request1/sstk.php",
       data: {
-        tm: that.data.topicInfo==1?'b':'a' + that.data.topicInfo.id
+        tm: 'a' + that.data.topicInfo[0]
       },
       method: "GET",
       header: {
@@ -59,10 +92,32 @@ Page({
               selectIndex:-1,
               answer:''
             }
-          ]
+          ],
+          scrollTop: 1000
         })
       },300)
     })
+  },
+  // 输入答案
+  getInputValue(e) {
+    if ( !e.detail.value) {
+      return
+    }
+    console.log(e)
+    let dat = e.currentTarget.dataset
+    console.log(this.data.questionList[dat.index].selectIndex)
+    if (this.data.questionList[dat.index].selectIndex != -1) {
+      return
+    }
+    this.data.questionList[dat.index].selectIndex = e.detail.value
+    this.data.questionList[dat.index].answer = e.detail.value
+    this.setData({
+      questionList:this.data.questionList,
+      nowIndx:dat.index
+    })
+
+    // 增加问题
+    this.addQuestion(dat.index)
   },
   // 选择答案
   selectAnswer(e) {
@@ -107,7 +162,11 @@ Page({
         clearTimeout(time)
         this.setData({
           questionList:this.data.questionList,
-          scrollTop:400*index + 1000
+          
+        },() => {
+          this.setData({
+            scrollTop:1000*index + 1000
+          })
         })
       },300)
     }
@@ -136,20 +195,24 @@ Page({
         arr.push('I')
       }else if(i.selectIndex == 9) {
         arr.push('J')
+      }else {
+        arr.push(i.selectIndex)
       }
     })
-    console.log(arr)
     wx.showLoading({
       title: '正在生成测试报告',
     })
     var that = this
-    let url = that.data.topicInfo==1?'b':'a' + that.data.topicInfo.id
+    let url = 'a' + that.data.topicInfo[0]
     // 记录次数
     that.addNum()
     wx.request({
       url: app.globalData.url + "ndzscs/request2/" + url + ".php",
       data: {
-        tm: arr, name: wx.getStorageSync('userInfo').nickName, id: '', tx: wx.getStorageSync('userInfo').avatarUrl,
+        tm: arr, 
+        name: wx.getStorageSync('userInfo').nickName, 
+        id: that.data.id, 
+        tx: wx.getStorageSync('userInfo').avatarUrl,
       },
       method: "GET",
       header: {
@@ -160,19 +223,19 @@ Page({
         if (res.data.df == 'ldt') {
           // 雷达图
           wx.setStorageSync('ldt', res.data)
-          wx.navigateTo({
+          wx.redirectTo({
             url: '/pages/ldt/ldt',
           })
         }else if (res.data.df == 'fwbjx') {
           // 自定义指数图
           wx.setStorageSync('fwbjx', res.data)
-          wx.navigateTo({
+          wx.redirectTo({
             url: '/pages/fwbjx/fwbjx',
           })
         }else{
           // 无背景图
           wx.setStorageSync('otherResult', res.data)
-          wx.navigateTo({
+          wx.redirectTo({
             url: '/pages/otherResult/otherResult',
           })
         }
@@ -184,7 +247,7 @@ Page({
     wx.request({
       url: app.globalData.url + "ndzscs/request1/sccscs.php",
       data: {
-        tm: this.data.topicInfo.id
+        tm: this.data.topicInfo[0]
       },
       method: "GET",
       header: {

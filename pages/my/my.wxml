@@ -1,7 +1,7 @@
 
 <view class="header free-style-list padding solid-bottom flex flex-direction bg-blue">
-  <text class="text-ll ">拾光背景</text>
-  <text class="margin-top-xs">好看的壁纸都在这里~</text>
+  <text class="text-ll ">测一测性格</text>
+  <text class="margin-top-xs">有趣好玩的测试合集~</text>
 </view>
 
 <view class="padding">
@@ -47,3 +47,25 @@
   </view>
 </view>
 <official-account></official-account>
+
+
+<view class="dong" >
+  <view class="monster">
+    <view class="monster__face">
+      <view class="monster__eye avatar-eye avatar-eye--green eye--left">
+        <view class="avatar-eye-pupil pupil--green"><span class="avatar-eye-pupil-blackThing"><span class="avatar-eye-pupil-lightReflection"></span></span></view>
+      </view>
+      <view class="monster__eye avatar-eye avatar-eye--violet eye--right">
+        <view class="avatar-eye-pupil pupil--pink"><span class="avatar-eye-pupil-blackThing"><span class="avatar-eye-pupil-lightReflection"></span></span></view>
+      </view>
+      <view class="monster__noses">
+        <view class="monster__nose"></view>
+        <view class="monster__nose"></view>
+      </view>
+      <view class="monster__mouth">
+        <view class="monster__top"></view>
+        <view class="monster__bottom"></view>
+      </view>
+    </view>
+  </view>
+</view>

@@ -1,5 +1,5 @@
 {
-  "navigationBarTitleText":"搜索壁纸",
+  "navigationBarTitleText":"搜索测试类型",
   "usingComponents": {
     "free-input": "/components/free-input/free-input",
     "free-rate":"/components/free-rate/free-rate"

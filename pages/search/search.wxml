@@ -26,7 +26,7 @@
                     disabled="true"
                     class="padding-tb-xss"
                 ></free-rate>
-                <text class="text-sm text-gray padding-left-sm">{{item[6]}}w人测过</text>
+                <text class="text-sm text-gray padding-left-sm">{{item[6]}}人测过</text>
                 </view>
                 <text class="text-cut-2 text-gray text-sm">{{item[2]}}</text>
             </view>

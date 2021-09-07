@@ -1,4 +1,5 @@
 
+@import '../../static/style/dong.wxss';
 .header{
   padding-top:200rpx;
 }

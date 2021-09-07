@@ -1,6 +1,7 @@
 {
   "pages": [
     "pages/home/home",
+    "pages/list/list",
     "pages/classify/classify",
     "pages/my/my",
     "pages/mobileInfo/mobileInfo",
@@ -28,6 +29,12 @@
         "iconPath": "/static/image/tabbarIcon/classify.png",
         "selectedIconPath": "/static/image/tabbarIcon/classify@.png",
         "pagePath": "pages/classify/classify"
+      },
+      {
+        "text": "Top榜",
+        "iconPath": "/static/image/tabbarIcon/top.png",
+        "selectedIconPath": "/static/image/tabbarIcon/top@.png",
+        "pagePath": "pages/list/list"
       },
       {
         "text": "更多",

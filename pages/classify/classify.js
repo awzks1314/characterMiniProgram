@@ -46,16 +46,16 @@ Page({
   detail(t) {
     var o = t.currentTarget.dataset.index;
     let data = this.data.listData[this.data.currentTab].list
-    let topic = {
-      id:data[o][0],
-      title:data[o][1],
-      banner:data[o][5],
-      desc:data[o][2],
-      numer:data[o][6],
-      subType:data[o][8],
-      xpzcs:0//是否是小瓶子
-    }
-    wx.setStorageSync('topicInfo', topic)
+    // let topic = {
+    //   id:data[o][0],
+    //   title:data[o][1],
+    //   banner:data[o][5],
+    //   desc:data[o][2],
+    //   numer:data[o][6],
+    //   subType:data[o][8],
+    //   xpzcs:0//是否是小瓶子
+    // }
+    wx.setStorageSync('topicInfo', data[o])
     wx.navigateTo({
       url: "/pages/detail/detail"
     })

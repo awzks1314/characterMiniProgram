@@ -1,8 +1,8 @@
-<scroll-view scroll-y="true" class="allBox" scroll-top="{{scrollTop}}">
+<scroll-view scroll-y="true" class="allBox" scroll-top="{{scrollTop}}" scroll-with-animation="true">
   <view class="question_top flex  align-center" >
       <image src="/static/image/author.jpg" class="logoImg"></image>
       <view class="top_content ">
-        {{topicInfo.desc}}
+        <text>{{topicInfo[3] || topicInfo[2]}}</text>
         <view class="triangleLeft"></view>
         <view class="triangleLeft1"></view>
       </view>
@@ -38,9 +38,19 @@
     </view>
     <view class="select_box bg-gray margin-top">
       <block wx:for="{{item.len}}" wx:key="items" wx:for-item="items" wx:for-index="indexs" >
-          <view class="select_item bg-white padding-xs flex align-center margin-bottom-xs" bindtap="selectAnswer" data-index="{{index}}" data-items="{{items + 2}}" wx:if="{{item.question[items + 2].length > 0}}">
-            <free-icon name="{{item.selectIndex == items?'roundcheckfill':'round'}}" size="36"></free-icon>
+          
+          <view class="select_item bg-white padding-lr-xs padding-tb-sm radius-xs flex align-center margin-bottom-xs" bindtap="selectAnswer" data-index="{{index}}" data-items="{{items + 2}}" wx:if="{{item.question[items + 2].length > 0 && item.question[14] != 1 && items <= 11}}">
+            <free-icon name="{{item.selectIndex == items?'roundcheckfill':'round'}}" size="36" color="{{item.selectIndex == items?'#0081ef':''}}"></free-icon>
             <text class="flex-sub padding-left-sm">{{item.question[items + 2]}}</text>
+          </view>
+
+          <view class="select_item bg-white padding-xs flex align-center margin-bottom-xs" bindtap="selectAnswer" data-index="{{index}}" data-items="{{items + 2}}" wx:elif="{{item.question[items + 2].length > 0 && item.question[14] == 1 && items <= 11}}">
+            <free-icon name="{{item.selectIndex == items?'roundcheckfill':'round'}}" size="36" color="{{item.selectIndex == items?'#0081ef':''}}"></free-icon>
+            <free-image src="{{item.question[items + 2]}}" width="400rpx" height="200rpx" radius="10rpx"></free-image>
+          </view>
+
+          <view class="select_item bg-white  padding-xs margin-bottom-xs"  wx:if="{{item.question[14] == 2 && item.question[items + 2].length > 0}}">
+            <free-input prefixIcon="none"  placeholder='{{item.question[1]}}' margin="0"  bind:confirm="getInputValue" data-index="{{index}}" ata-items="{{items + 2}}" extreaWord="确认"></free-input>
           </view>
       </block>
     </view>
@@ -48,7 +58,7 @@
 
     <view class="answer_box flex margin-top justify-end align-center" wx:if="{{item.answer}}">
         <view class="answer_content">
-          <view class="answer_desc">{{item.answer}}</view>
+          <view class="answer_desc" >{{item.answer}}</view>
           <view class="triangleRight"></view>
         </view>
         <image src="{{userInfo.avatarUrl}}" class="logoImg"></image>

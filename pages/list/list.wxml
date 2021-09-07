@@ -1,0 +1,58 @@
+<!-- <image src="../../static/image/list/rank_bg.png" class="header_bg"></image> -->
+<view class="header_bg" style="background:url('../../static/image/list/rank_bg.png') no-repeat;background-size: 750rpx;">
+  <view class="one_box">
+    <view class="top3">
+      <view class="num_two">
+        <image class="huangguan2" src="../../static/image/list/two.png"></image>
+        <image class="top3_head"  src="{{topThree[1][2]}}"></image>
+        <view class="top_name">{{topThree[1][1]}}</view>
+        <view class="top_sy">{{topThree[1][3]}}分</view>
+      </view>
+    </view>
+    <view class="top3">
+      <view class="num_one">
+        <image class="huangguan1" src="../../static/image/list/one.png"></image>
+        <image class="top1_head"  src="{{topThree[0][2]}}"></image>
+        <view class="top_name text-lg">{{topThree[0][1]}}</view>
+        <view class="top_sy">{{topThree[0][3]}}分</view>
+      </view>
+    </view>
+    <view class="top3">
+      <view class="num_two">
+        <image class="huangguan2" src="../../static/image/list/three.png"></image>
+        <image class="top2_head"  src="{{topThree[2][2]}}"></image>
+        <view class="top_name">{{topThree[2][1]}}</view>
+        <view class="top_sy">{{topThree[2][3]}}分</view>
+      </view>
+    </view>
+  </view>
+
+
+  <view class="number_sy_box">
+    <free-tabs 
+    tabs="{{list}}"   
+    padding="36"
+    currentTab="{{currentTab}}"  
+    bind:change="change" >
+  </free-tabs>
+  </view>
+</view>
+
+<free-gap height="60"></free-gap>
+<block wx:if="{{otherList.length>0}}">
+  <view class="rankItem flex align-center justify-between " wx:for="{{otherList}}" wx:key="index">
+  <view class="flex align-center ">
+    <view class="rankIndex text-ll padding-right">{{index + 4}}</view>
+    <image src="{{item[2]}}" class="rankHeard"></image>
+    <view class="padding-left-sm flex flex-direction" >
+      <text class="text-cut">{{item[1]}}</text>
+      <view class="padding-top-sm"><text class="text-blue">{{item[3]}}</text><text>分</text></view>
+    </view>
+  </view>
+    <button class="free-button bg-blue" bindtap="hit">打榜</button>
+</view>
+</block>
+<view class="padding-lg flex flex-direction align-center" wx:if="{{otherList.length == 0}}">
+  <image src="/static/image/no.png" style="width:300rpx;height:300rpx;"> </image>
+  <button class="free-button bg-blue block" style="width:200rpx;" bindtap="hit">打榜</button>
+</view>

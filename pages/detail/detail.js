@@ -7,7 +7,7 @@ Page({
   data: {
     topicInfo:{}
   },
-  onLoad() {
+  onLoad(options) {
     this.setData({
       topicInfo:wx.getStorageSync('topicInfo')
     })

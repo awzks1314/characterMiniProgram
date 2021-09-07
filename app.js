@@ -49,6 +49,6 @@ App({
     Custom:null,
     sysInfo:null,//可视化窗口高度
     couponList:null,
-    userInfo: null, csnr: null, appid: null, fxnr: null, fwbjxtext: null, url: "http://www.creater.ltd/"
+    userInfo: null, csnr: null, appid: null, fxnr: null, fwbjxtext: null, url: "https://www.creater.ltd/"
   }
 })

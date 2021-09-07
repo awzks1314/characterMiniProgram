@@ -1,3 +1,5 @@
 {
-  "usingComponents": {}
+  "usingComponents": {
+    "free-input": "/components/free-input/free-input"
+  }
 }

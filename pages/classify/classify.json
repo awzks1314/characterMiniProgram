@@ -1,5 +1,5 @@
 {
-  "navigationBarTitleText":"左右联动",
+  "navigationBarTitleText":"分类",
   "usingComponents": {
     "free-input":"/components/free-input/free-input",
     "free-rate":"/components/free-rate/free-rate",

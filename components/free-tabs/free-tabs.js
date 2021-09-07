@@ -69,10 +69,10 @@ Component({
       value: "10"
     },
     // //标签页宽度
-    // tabWidth: {
-    //   type: String,
-    //   value: "100"
-    // },
+    tabWidth: {
+      type: String,
+      value: ""
+    },
     //字体颜色
     color: {
       type: String,

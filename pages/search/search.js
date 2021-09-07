@@ -45,16 +45,16 @@ Page({
     },
     detail(t) {
         var o = t.currentTarget.dataset.index;
-        let topic = {
-          id:this.data.listData[o][0],
-          title:this.data.listData[o][1],
-          banner:this.data.listData[o][5],
-          desc:this.data.listData[o][2],
-          numer:this.data.listData[o][6],
-          subType:this.data.listData[o][8],
-          xpzcs:0//是否是小瓶子
-        }
-        wx.setStorageSync('topicInfo', topic)
+        // let topic = {
+        //   id:this.data.listData[o][0],
+        //   title:this.data.listData[o][1],
+        //   banner:this.data.listData[o][5],
+        //   desc:this.data.listData[o][2],
+        //   numer:this.data.listData[o][6],
+        //   subType:this.data.listData[o][8],
+        //   xpzcs:0//是否是小瓶子
+        // }
+        wx.setStorageSync('topicInfo', this.data.listData[o])
         wx.navigateTo({
           url: "/pages/detail/detail"
         })

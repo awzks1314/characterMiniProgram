@@ -1,13 +1,29 @@
 import * as echarts from '../../ec-canvas/echarts';
 const app = getApp();
 var barec = null
+//获取像素比
+const getPixelRatio = () => {
+  let pixelRatio = 0
+  wx.getSystemInfo({
+    success: function (res) {
+      pixelRatio = res.pixelRatio
+    },
+    fail: function () {
+      pixelRatio = 0
+    }
+  })
+  return pixelRatio
+}
+// console.log(pixelRatio)
+var dpr = getPixelRatio()
 Page({
   data: {
     ec: {
       onInit: function (canvas, width, height) {
         barec = echarts.init(canvas, null, {
           width: width,
-          height: height
+          height: height,
+          devicePixelRatio: dpr
         });
         canvas.setChart(barec);
         return barec;
@@ -80,7 +96,7 @@ Page({
         areaStyle: {
           normal: {
             width: 1,
-              opacity: 0.5,  //背景透明
+            opacity: 0.5,  //背景透明
           },
         },
         data: [{
@@ -98,9 +114,16 @@ Page({
     })
   },
   backHome() {
-    wx.switchTab({
-      url: '/pages/home/home',
-    })
+    if (wx.getStorageSync('origin')) {
+      wx.setStorageSync('origin', null)
+      wx.switchTab({
+        url: '/pages/list/list',
+      })
+    }else {
+      wx.switchTab({
+        url: '/pages/home/home',
+      })
+    }
   },
   /**
    * 用户点击右上角分享

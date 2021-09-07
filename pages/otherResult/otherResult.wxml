@@ -1,17 +1,17 @@
 
 <free-title type="2" title="测试结果" sub="result" titlecolor="#0081ef"></free-title>
 <view class="padding-lr">
-  <view class="">{{testData.ztpj}}</view>
+  <text class="">{{testData.ztpj}}</text>
 </view>
 
 <free-gap height="150"></free-gap>
 <view class="padding-lr bottom_box ">
   <view class="padding-top solid-top flex">
-    <button class="free-button bg-blue flex-sub margin-right flex align-center" bindtap="backHome">
+    <button class="free-button bg-blue flex-sub margin-right flex align-center lg" bindtap="backHome">
       <free-icon name="home" size="32" color="#fff"></free-icon>
       <text class="padding-left-xs">返回主页</text>
     </button>
-    <button class="free-button bg-gray flex-sub" open-type="share">
+    <button class="free-button bg-gray flex-sub lg" open-type="share">
       <free-icon name="share" size="32" color="#0081ef"></free-icon>
       <text class="padding-left-xs text-blue">分享好友</text>
     </button>

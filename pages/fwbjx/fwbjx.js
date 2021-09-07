@@ -17,9 +17,16 @@ Page({
     })
   },
   backHome() {
-    wx.switchTab({
-      url: '/pages/home/home',
-    })
+    if (wx.getStorageSync('origin')) {
+      wx.setStorageSync('origin', null)
+      wx.switchTab({
+        url: '/pages/list/list',
+      })
+    }else {
+      wx.switchTab({
+        url: '/pages/home/home',
+      })
+    }
   },
   /**
    * 用户点击右上角分享

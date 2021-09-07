@@ -45,7 +45,7 @@
 
 .free-tabs-title {
   position: relative;
-  display: flex;
+  /* display: flex; */
 }
 .free-flex{
   position: relative;

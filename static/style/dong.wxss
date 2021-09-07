@@ -2,7 +2,7 @@
 .dong {
   z-index: 9999;
   position: fixed;
-  bottom: -100px;
+  top: -60px;
   right: -80px;
   transform: scale(0.24);
   -webkit-transform: scale(0.24);
